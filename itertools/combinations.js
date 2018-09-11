@@ -16,15 +16,17 @@ function combinations(inputs, curr=[], combos=[]) {
 
 // Combinations with optional size parameter
 
-function combCap(input, size=0, curr=[], combos=[]) {
+function combinationsSize(input, size=0, curr=[], combos=[]) {
     if (curr.length === 0 && input.length === 0) return;
     if (input.length === 0) {
         if (size === 0 || curr.length === size) combos.push(curr);
     } else {
-        combCap(input.slice(1), size, curr.concat(input[0]), combos);
-        combCap(input.slice(1), size, curr, combos);        
+        combinationsSize(input.slice(1), size, curr.concat(input[0]), combos);
+        combinationsSize(input.slice(1), size, curr, combos);        
     }
     return combos;
 }
 
-console.log(combCap(['a','b','c'], 2));
+// console.log(combinationsSize(['a','b','c'], 2));
+
+console.log(combinationsSize([0, 1, 2], 3));
