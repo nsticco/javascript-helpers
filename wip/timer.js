@@ -11,7 +11,6 @@ function funcToTime(...args) {
 let input = (new Set(generateRange([0, 100000])), new Set(generateRange([50000, 150000])), new Set(generateRange([100000, 200000])))
 
 let range = generateRange([0, 1000000])
-let set = 
 
 // Timer below
 let t0 = Date.now();
