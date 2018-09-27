@@ -1,20 +1,20 @@
-// Import function module here
-var generateRange = require('./array-manipulation/generateRange')
+// Import function modules here
+var generateRange = require('../array-manipulation/generate-range');
+var insertionSort = require('../fcc/sort-insertion'); // two functions imported
+var randNumArr = require('../array-manipulation/random-number-array');
 
-function funcToTime(...args) {
-    const setArrs = args.map(arr => [...new Set(arr)]);
-    return setArrs.reduce((acc, next) => acc.filter(x => !next.includes(x))
-                                .concat(next.filter(y => !acc.includes(y))));            
-  }
+// Set input parameters here
+let input1 = randNumArr(50000, 50000);
+let input2 = input1.slice();
 
-// Set parameters here
-let input = (new Set(generateRange([0, 100000])), new Set(generateRange([50000, 150000])), new Set(generateRange([100000, 200000])))
-
-let range = generateRange([0, 1000000])
-
-// Timer below
+// Timer start
 let t0 = Date.now();
-// let result = funcToTime(input);
 
+// Run function
+let result = insertionSort(input1);
+
+// Timer finish
 let t1 = Date.now();
 console.log('Took', (t1 - t0).toFixed(4), 'milliseconds for process to complete');
+
+

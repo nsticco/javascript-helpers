@@ -3,9 +3,22 @@
 
 // Instructions: Write a function insertionSort which takes an array of integers as input and returns an array of these integers in sorted order from least to greatest.
 
+function insertionSort(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    let toMove = arr[i];
+    let curr = i - 1;
+    while (curr >= 0 && arr[curr] > toMove) {
+      arr[curr + 1] = arr[curr];
+      curr--;
+    }
+    arr[curr + 1] = toMove;
+  }
+  return arr;
+}
 
+module.exports = insertionSort;
 
 // test input
-let arr1 = [7, 4, 2, 8, 345, 123, 43, 32, 5643, 63, 123, 43, 2, 55, 1, 234, 92, 1];
+// let arr1 = [7, 4, 2, 8, 345, 123, 43, 32, 5643, 63, 123, 43, 2, 55, 1, 234, 92, 1];
 
-console.log(insertionSort(arr1));
+// console.log(insertionSort(arr1));
