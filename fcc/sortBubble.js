@@ -25,29 +25,5 @@ function bubbleSort(arr) {
 
 // test input
 let arr1 = [7, 4, 2, 8, 345, 123, 43, 32, 5643, 63, 123, 43, 2, 55, 1, 234, 92, 1];
-let arr2 = [7, 4, 2, 8, 345, 123, 43, 32, 5643, 63, 123, 43, 2, 55, 1, 234, 92, 1];
 
 console.log(bubbleSort(arr1));
-
-function selectionSort(arr) {
-  // change code below this line
-  // we will have to iterate through the array arr.length times
-  for (let i = 0; i < arr.length - 1; i++) {
-    // each time we iterate through, we can start one index higher
-    let min = i;
-    for (let j = i + 1; j < arr.length; j++) {
-      // if arr[j] we're checking is less than arr[min], min becomes j
-      if (arr[min] > arr[j]) {
-        min = j;
-      }
-    }
-    // swap min with arr[i]
-    let temp = arr[i];
-    arr[i] = arr[min];
-    arr[min] = temp;
-  }
-  // change code above this line
-  return arr;
-}
-
-console.log(selectionSort(arr2));
