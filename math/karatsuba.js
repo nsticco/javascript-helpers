@@ -10,7 +10,7 @@ function karatsuba(x, y) {
   let xlen = xstr.length;
   let ylen = ystr.length;
 
-  // n is minimum length between x and y, m is half rounded up
+  // n is the minimum length between x and y, m is half rounded up
   let n = Math.min(xlen, ylen);
   let m = Math.round(n / 2);
 

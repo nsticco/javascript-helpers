@@ -8,8 +8,8 @@ filterMap will...
 
 function filterMap(arr, predicate, mapFunc) {
     return arr.reduce( function (acc, item) {
-  	if (predicate(item)) acc.push(mapFunc(item));
-    return acc;
+        if (predicate(item)) acc.push(mapFunc(item));
+        return acc;
     }, []);
 }
 
