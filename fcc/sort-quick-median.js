@@ -1,5 +1,4 @@
-// This version of quickSort mutates an array in place
-// It is very fast and doesn't use extra memory
+// This version of quickSort finds the pivot using a Median of Three methodology
 
 function swap(arr, i, j) {
   let tmp = arr[i];
@@ -8,10 +7,23 @@ function swap(arr, i, j) {
 }
 
 function partition(arr, left, right) {
-  // Choose pivot index randomly and then swap to front of array
-  // let pindex = Math.floor(Math.random() * arr.length)
-  let pindex = Math.floor(arr.length / 2);
-  swap(arr, left, pindex);
+  //We choose pivot based on median of 3 and swap with left if necessary
+  let first = arr[left];
+  let mindex = left + Math.ceil((right - left + 1) / 2) - 1;
+  let middle = arr[mindex];
+  let last = arr[right];
+
+  let x = first - middle;
+  let y = middle - last;
+  let z = first - last;
+
+  if (x * y > 0) {
+    swap(arr, left, mindex);
+  }
+  else if (x * z > 0) {
+    swap(arr, left, right);
+  }
+
   let pivot = arr[left];
   let i = left + 1;
   for (let j = left + 1; j <= right; j++) {
