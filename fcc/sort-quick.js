@@ -9,8 +9,8 @@ function swap(arr, i, j) {
 
 function partition(arr, left, right) {
   // Choose pivot index randomly and then swap to front of array
-  // let pindex = Math.floor(Math.random() * arr.length)
-  let pindex = Math.floor(arr.length / 2);
+  let pindex = Math.floor(Math.random() * arr.length)
+  // let pindex = Math.floor(arr.length / 2);
   swap(arr, left, pindex);
   let pivot = arr[left];
   let i = left + 1;
